@@ -36,7 +36,7 @@ const productos = [
     nombre: "dulce de leche",
     precio: 350,
     img: 
-    "https://mui.kitchen/__export/1604968961339/sites/muikitchen/img/2020/11/09/dulce-leche.png_780026138.png"
+    "https://mui.kitchen/__export/1604968961339/sites/muikitchen/img/2020/11/09/dulce-leche.png_780026138.png",
     cantidad: 1,
     },
     ];
