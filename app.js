@@ -7,8 +7,8 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
-const getProducts = async ()=> {
-  const response = await fetch ("data.json");
+const getProducts = async () => {
+  const response = await fetch("data.json");
   const data = await response.json();
   data.forEach((product) => {
     let content = document.createElement("div");
@@ -18,18 +18,18 @@ const getProducts = async ()=> {
       <h3>${product.nombre}</h3>
       <p class="price">${product.precio} $</p>
     `;
-  
+
     shopContent.append(content);
-  
+
     let comprar = document.createElement("button");
     comprar.innerText = "comprar";
     comprar.className = "comprar";
-  
+
     content.append(comprar);
-  
+
     comprar.addEventListener("click", () => {
       const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
-  
+
       if (repeat) {
         carrito.map((prod) => {
           if (prod.id === product.id) {
@@ -46,12 +46,12 @@ const getProducts = async ()=> {
         });
         console.log(carrito);
         console.log(carrito.length);
-        carritoCounter();
-        saveLocal();
       }
+      carritoCounter();
+      saveLocal();
     });
   });
-  
+
 };
 getProducts();
 
